@@ -14,7 +14,7 @@ if %errorlevel% neq 0 (
     cls
     echo.
     echo ===========================================================
-    echo [ERRO] Este script requer privilégios de administrador.
+    echo [ERRO] Este script requer privilégios de Administrador.
     echo Por favor, feche o programa e execute-o como Administrador.
     echo ===========================================================
     echo.
