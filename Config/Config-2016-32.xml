@@ -1,0 +1,22 @@
+<Configuration>
+  <Add OfficeClientEdition="32" Channel="PerpetualVL2016">
+    <!-- Produtos a serem instalados -->
+    <Product ID="ProPlus2016Volume">
+      <Language ID="pt-BR" />
+      <ExcludeApp ID="Access" />
+      <ExcludeApp ID="InfoPath" />
+      <ExcludeApp ID="Lync" />
+      <ExcludeApp ID="OneNote" />
+      <ExcludeApp ID="Outlook" />
+      <ExcludeApp ID="Publisher" />
+      <ExcludeApp ID="SkypeForBusiness" />
+    </Product>
+  </Add>
+  <Display Level="None" AcceptEULA="TRUE" />
+  <!-- Forçar fechamento de aplicativos abertos durante a instalação -->
+  <Property Name="FORCEAPPSHUTDOWN" Value="TRUE" />
+  <Updates Enabled="FALSE" Channel="Monthly" />
+  <Property Name="PIDKEY" Value="XQNVK-8JYDB-WJ9W3-YJ8YR-WFG99" />
+  <Property Name="AUTOACTIVATE" Value="1" />
+  <Logging Path="%temp%" />
+</Configuration>
