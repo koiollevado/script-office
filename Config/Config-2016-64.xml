@@ -1,5 +1,5 @@
 <Configuration>
-  <Add OfficeClientEdition="64" Channel="Broad" >
+  <Add OfficeClientEdition="64" Channel="PerpetualVL2016" >
     <Product ID="ProPlusRetail">
       <Language ID="pt-BR" />
       <ExcludeApp ID="Access" />
