@@ -11,9 +11,13 @@ net session >nul 2>&1
 
 :: Verifica o código de erro
 if %errorlevel% neq 0 (
+    cls
     echo.
+    echo ===========================================================
     echo [ERRO] Este script requer privilégios de administrador.
     echo Por favor, feche o programa e execute-o como Administrador.
+    echo ===========================================================
+    echo.
     pause
     exit /b
 )
@@ -37,13 +41,13 @@ if "%arquitetura%"=="64-bit" (
 ) else if "%arquitetura%"=="32-bit" (
     echo Sistema operacional de 32 bits.
 ) else (
-    echo Nao foi possivel determinar a arquitetura.
+    echo Não foi possível determinar a arquitetura.
 )
 
 :menu
 cls
 echo ===============================================
-echo           Selecione a versão do Office
+echo          Selecione a versão do Office
 echo ===============================================
 echo                 1. Office 2013
 echo                 2. Office 2016
@@ -53,6 +57,7 @@ echo                 5. Office 2024
 echo                 6. Office 365
 echo                 0. Sair
 echo ===============================================
+echo.
 set /p escolha="           Digite a opção desejada: "
 
 :: Verifica a escolha do usuário
@@ -66,19 +71,33 @@ if /i "!escolha!"=="0" goto sair
 
 :: Se a escolha for inválida, retorna ao menu
 if not defined office (
-    echo Escolha inválida. Tente novamente.
+    cls
+    echo.
+    echo ===============================================
+    echo        Escolha inválida. Tente novamente.
+    echo ===============================================
+    echo.
     pause
     goto menu
 )
 
 :: Exibe a escolha do usuário e pede confirmação
 cls
+echo.
+echo ===============================================
 echo Você selecionou o Office !office! de !arquitetura! bits.
-set /p confirm="Deseja continuar? (S/N): "
+echo ===============================================
+echo.
+set /p confirm="           Deseja continuar? (S/N): "
 
 :: Verifica a confirmação do usuário
 if /i "!confirm!"=="S" (
-    echo Iniciando a instalação do Office !office!...
+    cls    
+    echo.
+    echo ===============================================
+    echo  Iniciando a instalação do Office !office!...
+    echo ===============================================
+    echo.
     :: Gera o comando de instalação para o Office
     (
     echo setup.exe /configure Config/Config-!office!-!arquitetura!.xml
@@ -86,16 +105,31 @@ if /i "!confirm!"=="S" (
     call install-office.cmd
     pause
 ) else if /i "!confirm!"=="N" (
-    echo A instalação foi cancelada. Retorne ao Menu.
+    cls
+    echo.
+    echo ===============================================
+    echo   A instalação foi cancelada. Retorne ao Menu.
+    echo ===============================================
+    echo.
     pause
     goto menu
 ) else (
-    echo Opção inválida. Retornando ao menu.
+    cls
+    echo.
+    echo ===============================================
+    echo       Opção inválida. Retornando ao menu.
+    echo ===============================================
+    echo.
     pause
     goto menu
 )
 
 :sair
-echo A instalação foi cancelada. Saindo.
+cls
+echo.
+echo ===============================================
+echo       A instalação foi cancelada. Saindo.
+echo ===============================================
+echo.
 pause
 exit /b
