@@ -1,0 +1,58 @@
+Baixe o arquivo no site:
+https://www.microsoft.com/en-us/download/details.aspx?id=49117
+
+https://download.microsoft.com/download/2/7/A/27AF1BE6-DD20-4CB4-B154-EBAB8A7D4A7E/officedeploymenttool_17830-20162.exe
+
+
+
+Copie este comando conforme mostrado no video j?? exclu?? a parte que n??o precisa, agora ?? s?? copiar
+
+<Configuration>
+
+<Add OfficeClientEdition="64" Channel="PerpetualVL2024">
+
+<Product ID="ProPlus2024Volume" PIDKEY="2TDPW-NDQ7G-FMG99-DXQ7M-TX3T2" >
+
+<Language ID="en-us" />
+
+</Product>
+
+</Add>
+
+<RemoveMSI />
+
+<Property Name="AUTOACTIVATE" Value="1" />
+
+</Configuration>
+
+
+
+                    -------------------------------------------------
+https://github.com/farag2/Office/blob/master/Download.ps1
+
+
+PRIMEIRA CHAVE
+
+Office LTSC 2024 for commercial preview: 2TDPW-NDQ7G-FMG99-DXQ7M-TX3T2
+
+
+
+COMANDO CONSOLE:
+
+setup.exe /configure configuration.xml
+
+
+
+COMANDO NO CMD:
+
+cd \
+
+cd office
+
+setup.exe /configure configuration.xml
+
+
+
+SEGUNDA CHAVE - USE MAK TO ACTIVATE:
+
+Office LTSC 2024 for commercial preview: Y63J7-9RNDJ-GD3BV-BDKBP-HH966
